@@ -25,17 +25,32 @@ O primeiro dígito do CPF é 7
 """
 digitar_cpf = input("Digite o cpf que você deseja validar: ")
 cpf_formatado_sem_ponto = digitar_cpf.replace(".", "")
-cpf_formatado = cpf_formatado_sem_ponto.replace("-", "")
-multiplicar_cpf = 0
-i = 10
-j = 0
-somar_cpf = 0
+cpf_enviado_e_formatado = cpf_formatado_sem_ponto.replace("-", "")
+nove_digitos = cpf_enviado_e_formatado[:9]
+contador_regressivo_1 = 10
+resultado_1 = 0
+contador_regressivo_2 = 11
+resultado_2 = 0
 
-while i > 2:
-    multiplicar_cpf = i * int(cpf_formatado[j])
-    somar_cpf += multiplicar_cpf
-    i -= 1
-    j += 1
-resultado = (somar_cpf * 10) % 11
-resultado=0 if resultado > 9 else resultado
-print(f"O primeiro dígito do cpf é {resultado}")
+for digito_1 in nove_digitos:
+    resultado_1 += (int(digito_1) * contador_regressivo_1)
+    contador_regressivo_1 -= 1
+    resultado_2 += (int(digito_1) * contador_regressivo_2)
+    contador_regressivo_2 -= 1
+print(resultado_1)
+
+digito_1 = (resultado_1 * 10) % 11
+digito_1=0 if digito_1 > 9 else digito_1 
+digito_2 = ((resultado_2 + (digito_1 * 2)) * 10) % 11
+digito_2=0 if digito_2 > 9 else digito_2
+print(f"O primeiro dígito do cpf é {digito_1}")
+print(f"O segundo dígito do cpf é {digito_2}")
+cpf_gerado_calculo = f"{nove_digitos}{digito_1}{digito_2}"
+if cpf_enviado_e_formatado == cpf_gerado_calculo:
+    print(f"{cpf_enviado_e_formatado} é válido!")
+
+else:
+    print(f"{cpf_enviado_e_formatado} é inválido!")
+
+
+
