@@ -21,37 +21,156 @@
 #     ]
 # }
 # pessoa = dict(nome='Luiz Otávio', sobrenome='Miranda')
-pessoa1 = {
-    'nome': 'Luiz Otávio',
+# pessoa1 = {
+#     'nome': 'Luiz Otávio',
+#     'sobrenome': 'Miranda',
+#     'idade': 18,
+#     'altura': 1.8,
+#     'endereços': [
+#         {'rua': 'tal tal', 'número': 123},
+#         {'rua': 'outra rua', 'número': 321},
+#     ],
+# }
+# pessoa2 = {
+#     "nome": "Bruno Cassiano",
+#     "sobrenome": "Stoelbenn",
+#     "idade": 21,
+#     "altura": 1.81,
+#     "endereços": [
+#         {'rua': 'tal tal', 'numero': 510},
+#         {'rua': 'outra rua', 'numero': 420}
+#     ],
+# }
+
+# # print(pessoa, type(pessoa))
+# print(pessoa1['nome'])
+# print(pessoa1['sobrenome'])
+
+# print()
+
+# for chave in pessoa1:
+#     print(f"{chave}: ", pessoa1[chave])
+
+# print()
+
+# for chave in pessoa2:
+#     print(f"{chave}: ", pessoa2[chave])
+
+# Manipulando chaves e valores em dicionários
+# pessoa = {}
+
+# ##
+# ##
+
+# chave = 'nome'
+
+# pessoa[chave] = 'Luiz Otávio'
+# pessoa['sobrenome'] = 'Miranda'
+
+
+# print(pessoa[chave])
+
+# pessoa[chave] = 'Maria'
+
+# del pessoa['sobrenome']
+# print(pessoa)
+# print(pessoa['nome'])
+
+# # print(pessoa.get('sobrenome'))
+# if pessoa.get('sobrenome') is None:
+#     print('NÃO EXISTE')
+# else:
+#     print(pessoa['sobrenome'])
+
+# print('ISSO Não vai')
+
+# Métodos úteis dos dicionários em Python
+# len - quantas chaves
+# keys - iterável com as chaves
+# values - iterável com os valores
+# items - iterável com chaves e valores
+# setdefault - adiciona valor se a chave não existe
+# copy - retorna uma cópia rasa (shallow copy)
+# get - obtém uma chave
+# pop - Apaga um item com a chave especificada (del)
+# popitem - Apaga o último item adicionado
+# update - Atualiza um dicionário com outro
+# pessoa = {
+#     'nome': 'Luiz Otávio',
+#     'sobrenome': 'Miranda',
+#     'idade': 900,
+# }
+
+# pessoa.setdefault('idade', 0)
+# print(pessoa['idade'])
+# # print(len(pessoa))
+# # print(list(pessoa.keys()))
+# print(list(pessoa.values()))
+# # print(list(pessoa.items()))
+
+# print()
+
+# for valor in pessoa.values():
+#     print(valor)
+
+# print()
+
+# for key in pessoa.keys():
+#     print(key)
+
+# print()
+
+# for chave, valor in pessoa.items():
+#     print(chave, valor)
+
+# Métodos úteis dos dicionários em Python
+# len - quantas chaves
+# keys - iterável com as chaves
+# values - iterável com os valores
+# items - iterável com chaves e valores
+# setdefault - adiciona valor se a chave não existe
+# copy - retorna uma cópia rasa (shallow copy)
+# get - obtém uma chave
+# pop - Apaga um item com a chave especificada (del)
+# popitem - Apaga o último item adicionado
+# update - Atualiza um dicionário com outro
+import copy
+
+d1 = {
+    'c1': 1,
+    'c2': 2,
+    'l1': [0, 1, 2],
+}
+
+d2 = copy.deepcopy(d1)
+# d2 = d1.copy()
+
+
+d2['c1'] = 1000
+d2['l1'][1] = 999999
+
+print(d1)
+print(d2)
+
+p1 = {
+    'nome': 'Luiz',
     'sobrenome': 'Miranda',
-    'idade': 18,
-    'altura': 1.8,
-    'endereços': [
-        {'rua': 'tal tal', 'número': 123},
-        {'rua': 'outra rua', 'número': 321},
-    ],
 }
-pessoa2 = {
-    "nome": "Bruno Cassiano",
-    "sobrenome": "Stoelbenn",
-    "idade": 21,
-    "altura": 1.81,
-    "endereços": [
-        {'rua': 'tal tal', 'numero': 510},
-        {'rua': 'outra rua', 'numero': 420}
-    ],
-}
+# print(p1['nome'])
+# print(p1.get('nome', 'Não existe'))
 
-# print(pessoa, type(pessoa))
-print(pessoa1['nome'])
-print(pessoa1['sobrenome'])
-
-print()
-
-for chave in pessoa1:
-    print(f"{chave}: ", pessoa1[chave])
-
-print()
-
-for chave in pessoa2:
-    print(f"{chave}: ", pessoa2[chave])
+# nome = p1.pop('nome')
+# print(nome)
+# print(p1)
+# ultima_chave = p1.popitem()
+# print(ultima_chave)
+# print(p1)
+# p1.update({
+#     'nome': 'novo valor',
+#     'idade': 30,
+# })
+# p1.update(nome='novo valor', idade=30)
+# tupla = (('nome', 'novo valor'), ('idade', 30))
+lista = [['nome', 'novo valor'], ['idade', 30]]
+p1.update(lista)
+print(p1)
