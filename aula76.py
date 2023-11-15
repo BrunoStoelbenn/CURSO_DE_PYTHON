@@ -95,11 +95,11 @@
 # pop - Apaga um item com a chave especificada (del)
 # popitem - Apaga o último item adicionado
 # update - Atualiza um dicionário com outro
-# pessoa = {
-#     'nome': 'Luiz Otávio',
-#     'sobrenome': 'Miranda',
-#     'idade': 900,
-# }
+pessoa = {
+    'nome': 'Luiz Otávio',
+    'sobrenome': 'Miranda',
+    'idade': 900,
+}
 
 # pessoa.setdefault('idade', 0)
 # print(pessoa['idade'])
@@ -120,8 +120,8 @@
 
 # print()
 
-# for chave, valor in pessoa.items():
-#     print(chave, valor)
+for chave, valor in pessoa.items():
+    print(chave, valor)
 
 # Métodos úteis dos dicionários em Python
 # len - quantas chaves
