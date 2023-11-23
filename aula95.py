@@ -1,26 +1,26 @@
-# isinstace - para saber se objeto é de determinado tipo
-lista = [
-    'a', 1, 1.1, True, [0, 1, 2], (1, 2),
-    {0, 1}, {'nome': 'Luiz'},
-]
+# raise - lançando exceções (erros)
+# https://docs.python.org/pt-br/3/library/exceptions.html#built-in-exceptions
+def nao_aceito_zero(d):
+    if d == 0:
+        raise ZeroDivisionError('Você está tentando dividir por zero')
+    return True
 
-for item in lista:
-    if isinstance(item, set):
-        print('SET')
-        item.add(5)
-        print(item, isinstance(item, set))
 
-    elif isinstance(item, str):
-        print('STR')
-        print(item.upper())
+def deve_ser_int_ou_float(n):
+    tipo_n = type(n)
+    if not isinstance(n, (float, int)):
+        raise TypeError(
+            f'"{n}" deve ser int ou float. '
+            f'"{tipo_n.__name__}" enviado.'
+        )
+    return True
 
-    elif isinstance(item, list):
-        print('LIST')
-        print(item)
 
-    elif isinstance(item, (int, float)):
-        print('NUM')
-        print(item, item * 2)
-    else:
-        print('OUTRO')
-        print(item)
+def divide(n, d):
+    deve_ser_int_ou_float(n)
+    deve_ser_int_ou_float(d)
+    nao_aceito_zero(d)
+    return n / d
+
+
+print(divide(8, '0'))
