@@ -33,7 +33,7 @@ novos_produtos = [
     for produto in produtos
 ]
 
-# # print(novos_produtos)
+print(novos_produtos)
 # print(novos_produtos)
 # p(novos_produtos)
 # lista = [n for n in range(10) if n < 5]

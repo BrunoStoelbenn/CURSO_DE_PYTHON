@@ -17,12 +17,12 @@ lista = [
 # lista.sort(reverse=False)
 # print(lista)
 
-def ordena_nome(item):
-    return item['nome']
-    print()
+# def ordena_nome(item):
+#     return item['nome']
+#     print()
 
-def ordena_sobrenome(item):
-    return item['sobrenome']
+# def ordena_sobrenome(item):
+#     return item['sobrenome']
 
 def exibir(lista):
     for item in lista:

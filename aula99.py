@@ -18,4 +18,8 @@
 # print(soma_do_modulo(10, 20))
 # fala_oi() 
 
-import aula99_package
+from aula99_package import soma_do_modulo
+
+print(soma_do_modulo(2, 3))
+
+
