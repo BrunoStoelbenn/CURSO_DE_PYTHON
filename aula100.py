@@ -11,18 +11,18 @@ from dados import produtos
 # Gere produtos_ordenados_por_preco por deep copy (cópia profunda)
 
 novos_produtos = [
-    {**produto, 'preco': produto['preco'] * 1.1}
+    {**produto, 'preco': round(produto['preco'] * 1.1, 2)}
     for produto in produtos
 ]
 
-produtos_ordenados_nome =  sorted(produtos, key=lambda item: item['nome'])
-produtos_ordenados_preco =  sorted(produtos, key=lambda item: item['preco'])
+produtos_ordenados_nome =  sorted(produtos, key=lambda produto: produto['nome'], reverse=True)
+produtos_ordenados_preco =  sorted(produtos, key=lambda produto: produto['preco'])
 
-print(produtos)
+print(*produtos, sep='\n')
 print()
-print(novos_produtos)
+print(*novos_produtos, sep='\n')
 print()
-print(produtos_ordenados_nome)
+print(*produtos_ordenados_nome, sep='\n')
 print()
-print(produtos_ordenados_preco)
+print(*produtos_ordenados_preco, sep='\n')
 
