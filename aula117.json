@@ -1,0 +1,24 @@
+{
+  "nome": "Bruno Cassiano",
+  "sobrenome": "Stoelbenn",
+  "enderecos": [
+    {
+      "rua": "Avenida Dom Alberto Etges",
+      "numero": 550
+    },
+    {
+      "rua": "R2",
+      "numero": 55
+    }
+  ],
+  "altura": 1.81,
+  "numeros_preferidos": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "dev": true,
+  "nada": null
+}
