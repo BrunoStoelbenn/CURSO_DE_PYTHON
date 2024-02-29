@@ -36,5 +36,5 @@ print(p3.nome, p3.idade)
 print(p4.nome, p4.idade)
 print(p5.nome, p5.idade)
 # print(Pessoa.ano)
-# Pessoa.metodo_de_classe()
+# Pessoa.metodo_de_classe() 
     
