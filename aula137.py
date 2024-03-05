@@ -39,8 +39,6 @@ class Fabricante:
         return self.nome_fabricante
 
 
-# Restante do código permanece o mesmo...
-
 carro_escort = Carro("Escort")
 fabricante_ford = Fabricante("Ford")
 motor_escort = Motor("Ford Zetec")
